@@ -7,9 +7,7 @@ use Illuminate\Http\Request;
 
 class WebsiteController extends Controller
 {
-    public function adminLogin(){
-        return view('auth.admin-login');
-    }
+
 
     public function sellerLogin(){
         return view('auth.seller-login');

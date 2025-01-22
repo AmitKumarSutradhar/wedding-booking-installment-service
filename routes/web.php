@@ -8,7 +8,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/admin/auth/login', [WebsiteController::class, 'adminLogin'])->name('admin.login');
+
 Route::get('/seller/auth/login', [WebsiteController::class, 'sellerLogin'])->name('seller.login');
 Route::get('/seller/auth/register', [WebsiteController::class, 'sellerRegister'])->name('seller.register');
 
