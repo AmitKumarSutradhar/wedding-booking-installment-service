@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Wedding Service </title>
+    <title>@yield('title') - Wedding Service </title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{ asset('/') }}admin/assets/vendors/feather/feather.css">
     <link rel="stylesheet" href="{{ asset('/') }}admin/assets/vendors/mdi/css/materialdesignicons.min.css">
@@ -19,6 +19,8 @@
     <!-- Plugin css for this page -->
     <link rel="stylesheet" href="{{ asset('/') }}admin/assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('/') }}admin/assets/js/select.dataTables.min.css">
+    <link rel="stylesheet" href="{{ asset('/') }}admin/assets/vendors/select2/select2.min.css">
+    <link rel="stylesheet" href="{{ asset('/') }}admin/assets/vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <link rel="stylesheet" href="{{ asset('/') }}admin/assets/css/style.css">
@@ -57,6 +59,8 @@
 <!-- Plugin js for this page -->
 <script src="{{ asset('/') }}admin/assets/vendors/chart.js/chart.umd.js"></script>
 <script src="{{ asset('/') }}admin/assets/vendors/progressbar.js/progressbar.min.js"></script>
+<script src="{{ asset('/') }}admin/assets/vendors/typeahead.js/typeahead.bundle.min.js"></script>
+<script src="{{ asset('/') }}admin/assets/vendors/select2/select2.min.js"></script>
 <!-- End plugin js for this page -->
 <!-- inject:js -->
 <script src="{{ asset('/') }}admin/assets/js/off-canvas.js"></script>
@@ -69,6 +73,10 @@
 <script src="{{ asset('/') }}admin/assets/js/jquery.cookie.js" type="text/javascript"></script>
 <script src="{{ asset('/') }}admin/assets/js/dashboard.js"></script>
 <!-- <script src="{{ asset('/') }}admin/assets/js/Chart.roundedBarCharts.js"></script> -->
+
+
+<script src="{{ asset('/') }}admin/assets/js/typeahead.js"></script>
+<script src="{{ asset('/') }}admin/assets/js/select2.js"></script>
 <!-- End custom js for this page-->
 </body>
 
