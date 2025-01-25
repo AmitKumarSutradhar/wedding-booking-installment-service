@@ -35,16 +35,25 @@
       }
     }
 
-    var current = location.pathname.split("/").slice(-1)[0].replace(/^\/|\/$/g, '');
+    var current = location.pathname;
     $('.nav li a', sidebar).each(function () {
-      var $this = $(this);
-      addActiveClass($this);
+        var $this = $(this);
+        if ($this.attr('href') === current) {
+            $this.addClass('active');
+            $this.closest('.collapse').addClass('show');
+            $this.closest('li').addClass('active');
+        }
     })
 
-    $('.horizontal-menu .nav li a').each(function () {
+      $('.horizontal-menu .nav li a').each(function () {
       var $this = $(this);
-      addActiveClass($this);
+      if ($this.attr('href') === current) {
+          $this.addClass('active');
+          $this.closest('.collapse').addClass('show');
+          $this.closest('li').addClass('active');
+      }
     })
+
 
     //Close other submenu in sidebar on opening any
 
@@ -119,7 +128,7 @@
 
   });
 
-  //check all boxes in order status 
+  //check all boxes in order status
   $("#check-all").click(function () {
     $(".form-check-input").prop('checked', $(this).prop('checked'));
   });

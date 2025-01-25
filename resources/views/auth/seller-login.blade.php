@@ -33,26 +33,24 @@
 {{--                            <img src="{{ asset('/admin') }}/assets/images/logo.svg" alt="logo">--}}
                         </div>
                         <h2 class="text-center">Seller Sign In</h2>
-                        <form class="pt-3">
+                        <form action="{{ route('seller.login.submit') }}" method="POST" class="pt-3">
+                            @csrf
                             <div class="form-group">
-                                <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Email">
+                                <input type="email" name="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Email">
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
+                                <input type="password" name="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
                             </div>
                             <div class="mb-4">
                                 <div class="form-check">
                                     <label class="form-check-label text-muted">
-                                        <input type="checkbox" class="form-check-input"> Keep me signed in</label>
+                                        <input type="checkbox" name="remember" class="form-check-input"> Keep me signed in</label>
                                 </div>
                             </div>
                             <div class="mt-3 d-grid gap-2">
-                                <a class="btn btn-block btn-primary btn-lg fw-medium auth-form-btn" href="../../index.html">Sign In</a>
+                                <button type="submit" class="btn btn-block btn-primary btn-lg fw-medium auth-form-btn">Sign In</button>
                             </div>
                         </form>
-                        <div class="text-center mt-4 fw-light"> Don't have an account?
-                            <a href="register.html" class="text-primary">Create</a>
-                        </div>
                     </div>
                 </div>
             </div>

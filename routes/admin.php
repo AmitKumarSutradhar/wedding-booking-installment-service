@@ -15,7 +15,7 @@ Route::group([], function (){
     Route::post('auth/login', [AdminAuthController::class, 'adminLoginSubmit'])->name('login.submit');
 
 
-    Route::middleware('admin')->group(function (){
+    Route::middleware(['admin'])->group(function (){
         Route::get('/dashboard', [AdminAuthController::class, 'adminDashboard'])->name('dashboard');
         Route::post('/auth/logout', [AdminAuthController::class, 'logout'])->name('auth.logout');
 
@@ -26,7 +26,8 @@ Route::group([], function (){
 
         //Admin Dashboard Discount Routes
         Route::prefix('discount')->name('discount.')->group(function (){
-            Route::get('index', [DiscountController::class, 'index'])->name('index');
+
+            Route::get('/list', [DiscountController::class, 'index'])->name('index');
             Route::get('create', [DiscountController::class, 'create'])->name('create');
         });
 

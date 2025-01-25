@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
-class AdminMiddleware
+class SellerAuthMiddleware
 {
     /**
      * Handle an incoming request.
@@ -16,10 +16,10 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(Auth::guard('admin')->check()){
+        if(Auth::guard('seller')->check()){
             return $next($request);
         }
 
-        return redirect()->route('admin.auth.login')->with('error', 'Unauthorized access');
+        return redirect()->route('seller.auth.login')->with('error', 'Unauthorized access');
     }
 }
