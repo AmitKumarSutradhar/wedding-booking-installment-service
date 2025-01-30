@@ -31,11 +31,11 @@
 <body class="with-welcome-text">
 <div class="container-scroller">
     <!-- partial:partials/_navbar.html -->
-   @include('admin-views.includes.header')
+   @include('seller-views.includes.header')
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
         <!-- partial:partials/_sidebar.html -->
-       @include('admin-views.includes.sidebar')
+       @include('seller-views.includes.sidebar')
         <!-- partial -->
 
         <div class="main-panel">
@@ -44,7 +44,7 @@
             </div>
             <!-- content-wrapper ends -->
             <!-- partial:partials/_footer.html -->
-            @include('admin-views.includes.footer')
+            @include('seller-views.includes.footer')
             <!-- partial -->
         </div>
         <!-- main-panel ends -->

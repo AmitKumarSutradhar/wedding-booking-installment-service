@@ -16,12 +16,12 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(Auth::guard('admin')->check()){
-            return $next($request);
+        if(!Auth::guard('admin')->check()){
+            Auth::guard('admin')->logout();
+            return redirect()->route('admin.auth.login')->with('error', 'Unauthorized access');
         }
 
-        auth()->gaurd('admin')->logout();
+        return $next($request);
 
-        return redirect()->route('admin.auth.login')->with('error', 'Unauthorized access');
     }
 }

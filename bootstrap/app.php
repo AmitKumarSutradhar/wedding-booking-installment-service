@@ -23,6 +23,7 @@ return Application::configure(basePath: dirname(__DIR__))
         }
     )
     ->withMiddleware(function (Middleware $middleware) {
+
         $middleware->alias([
             'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
             'admin' => \App\Http\Middleware\AdminMiddleware::class,
@@ -43,11 +44,11 @@ return Application::configure(basePath: dirname(__DIR__))
                     }
                 }//seller auth
 
-                if (in_array('auth:seller', $request->route()->middleware())) {
-                    if (!auth('seller')->check()) {
-                        return route('seller.auth.login');
+                if (in_array('auth', $request->route()->middleware())) {
+                    if (!auth()->check()) {
+                        return route('login');
                     }
-                }//seller auth
+                }//user auth
             }
         });
     })

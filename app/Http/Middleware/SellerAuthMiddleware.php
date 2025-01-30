@@ -16,10 +16,13 @@ class SellerAuthMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(Auth::guard('seller')->check()){
-            return $next($request);
+        if(!Auth::guard('seller')->check()){
+            Auth::guard('seller')->logout();
+            return redirect()->route('seller.auth.login')->with('error', 'Unauthorized access');
         }
 
-        return redirect()->route('seller.auth.login')->with('error', 'Unauthorized access');
+        return $next($request);
+
+
     }
 }

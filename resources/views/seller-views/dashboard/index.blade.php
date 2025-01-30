@@ -1,47 +1,79 @@
-@extends('admin-views.layout.master')
+@extends('seller-views.layout.master')
 
-@section('title', 'Dashboard')
+@section('title', 'Seller Dashboard')
 
 @section('content')
     <div class="row">
         <div class="col-sm-12">
             <!--  -->
-            <div class="row">
-                <div class="col-md-3 col-lg-3">
-                    <div class="card bg-primary card-rounded">
-                        <div class="card-body pb-0">
-                            <h4 class="card-title card-title-dash text-white mb-4">Total Earning</h4>
-                            <h2 class="fw-bold text-white mb-4">$5800</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-lg-3">
-                    <div class="card bg-info card-rounded">
-                        <div class="card-body pb-0">
-                            <h4 class="card-title card-title-dash text-white mb-4">Total Customer</h4>
-                            <h2 class="fw-bold text-white mb-4">500</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-lg-3">
-                    <div class="card bg-secondary card-rounded">
-                        <div class="card-body pb-0">
-                            <h4 class="card-title card-title-dash text-white mb-4">Total Customer</h4>
-                            <h2 class="fw-bold text-white mb-4">500</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-lg-3">
-                    <div class="card bg-success card-rounded">
-                        <div class="card-body pb-0">
-                            <h4 class="card-title card-title-dash text-white mb-4">Total Vendor</h4>
-                            <h2 class="fw-bold text-white mb-4">50</h2>
+              <div class="row">
+                  <div class="col-12">
+                      <div class="card card-rounded">
+                          <div class="card-body">
+                              <div class="d-sm-flex justify-content-between align-items-start">
+                                  <div>
+                                      <h4 class="card-title card-title-dash mb-3">Business Analytics</h4>
+                                  </div>
+                              </div>
+                              <div class="row">
+                                  <div class="col-md-3 col-lg-3">
+                                      <div class="card bg-warning card-rounded">
+                                          <div class="card-body pb-0">
+                                              <h4 class="card-title card-title-dash text-white mb-4">Total Earning</h4>
+                                              <h2 class="fw-bold text-white mb-4">62,101.15$</h2>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="col-md-3 col-lg-3">
+                                      <div class="card bg-info card-rounded">
+                                          <div class="card-body pb-0">
+                                              <h4 class="card-title card-title-dash text-white mb-4">Total Service</h4>
+                                              <h2 class="fw-bold text-white mb-4">50</h2>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="col-md-3 col-lg-3">
+                                      <div class="card bg-secondary card-rounded">
+                                          <div class="card-body pb-0">
+                                              <h4 class="card-title card-title-dash text-white mb-4">Total Customer</h4>
+                                              <h2 class="fw-bold text-white mb-4">500</h2>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="col-md-3 col-lg-3">
+                                      <div class="card bg-success card-rounded">
+                                          <div class="card-body pb-0">
+                                              <h4 class="card-title card-title-dash text-white mb-4">Total booking served</h4>
+                                              <h2 class="fw-bold text-white mb-4">50</h2>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            <!--  -->
+
+            <div class="row my-3">
+                <div class="col-12">
+                    <div class="card card-rounded my-3">
+                        <div class="card-body">
+                            <div class="d-sm-flex justify-content-between align-items-start">
+                                <div>
+                                    <h4 class="card-title card-title-dash">Want To Get Highlighted</h4>
+                                    <h5 class="card-subtitle card-subtitle-dash">Create ads to get highlighted on the app and web browser</h5>
+                                </div>
+                                <div>
+                                    <button class="btn btn-primary btn-lg text-white mb-0 me-0" type="button">Create Ads</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!--  -->
-            <div class="row my-4">
+
+            <div class="row my-3">
                 <div class="col-lg-8 d-flex flex-column">
                     <div class="row flex-grow">
                         <div class="col-12 col-lg-4 col-lg-12 grid-margin stretch-card">
@@ -126,7 +158,7 @@
             </div>
 
             <!--  Top Vendors Start -->
-            <div class="row my-4">
+            <div class="row my-3">
                 <div class="col-lg-8 col-12 grid-margin stretch-card">
                     <div class="card card-rounded">
                         <div class="card-body">
@@ -165,7 +197,7 @@
                                         </td>
                                         <td>
                                             <div class="d-flex ">
-                                                <img src="assets/images/faces/face1.jpg" alt="">
+                                                <img src="{{ asset('/') }}admin/assets/images/faces/face1.jpg" alt="">
                                                 <div>
                                                     <h6>Brandon Washington</h6>
                                                     <p>Head admin</p>
@@ -200,7 +232,7 @@
                                         </td>
                                         <td>
                                             <div class="d-flex">
-                                                <img src="assets/images/faces/face2.jpg" alt="">
+                                                <img src="{{ asset('/') }}admin/assets/images/faces/face2.jpg" alt="">
                                                 <div>
                                                     <h6>Laura Brooks</h6>
                                                     <p>Head admin</p>
@@ -235,7 +267,7 @@
                                         </td>
                                         <td>
                                             <div class="d-flex">
-                                                <img src="assets/images/faces/face3.jpg" alt="">
+                                                <img src="{{ asset('/') }}admin/assets/images/faces/face3.jpg" alt="">
                                                 <div>
                                                     <h6>Wayne Murphy</h6>
                                                     <p>Head admin</p>
@@ -270,7 +302,7 @@
                                         </td>
                                         <td>
                                             <div class="d-flex">
-                                                <img src="assets/images/faces/face4.jpg" alt="">
+                                                <img src="{{ asset('/') }}admin/assets/images/faces/face4.jpg" alt="">
                                                 <div>
                                                     <h6>Matthew Bailey</h6>
                                                     <p>Head admin</p>
@@ -305,7 +337,7 @@
                                         </td>
                                         <td>
                                             <div class="d-flex">
-                                                <img src="assets/images/faces/face5.jpg" alt="">
+                                                <img src="{{ asset('/') }}admin/assets/images/faces/face5.jpg" alt="">
                                                 <div>
                                                     <h6>Katherine Butler</h6>
                                                     <p>Head admin</p>
@@ -346,13 +378,13 @@
                                         <div class="col-lg-12">
                                             <div class="d-flex justify-content-between align-items-center mb-3">
                                                 <div>
-                                                    <h4 class="card-title card-title-dash">Top Vendors</h4>
+                                                    <h4 class="card-title card-title-dash">Top Customers List</h4>
                                                 </div>
                                             </div>
                                             <div class="mt-3">
                                                 <div class="wrapper d-flex align-items-center justify-content-between py-2 border-bottom">
                                                     <div class="d-flex">
-                                                        <img class="img-sm rounded-10" src="assets/images/faces/face1.jpg" alt="profile">
+                                                        <img class="img-sm rounded-10" src="{{ asset('/') }}admin/assets/images/faces/face1.jpg" alt="profile">
                                                         <div class="wrapper ms-3">
                                                             <p class="ms-1 mb-1 fw-bold">Brandon Washington</p>
                                                             <small class="text-muted mb-0">162543</small>
@@ -362,7 +394,7 @@
                                                 </div>
                                                 <div class="wrapper d-flex align-items-center justify-content-between py-2 border-bottom">
                                                     <div class="d-flex">
-                                                        <img class="img-sm rounded-10" src="assets/images/faces/face2.jpg" alt="profile">
+                                                        <img class="img-sm rounded-10" src="{{ asset('/') }}admin/assets/images/faces/face2.jpg" alt="profile">
                                                         <div class="wrapper ms-3">
                                                             <p class="ms-1 mb-1 fw-bold">Wayne Murphy</p>
                                                             <small class="text-muted mb-0">162543</small>
@@ -372,7 +404,7 @@
                                                 </div>
                                                 <div class="wrapper d-flex align-items-center justify-content-between py-2 border-bottom">
                                                     <div class="d-flex">
-                                                        <img class="img-sm rounded-10" src="assets/images/faces/face3.jpg" alt="profile">
+                                                        <img class="img-sm rounded-10" src="{{ asset('/') }}admin/assets/images/faces/face3.jpg" alt="profile">
                                                         <div class="wrapper ms-3">
                                                             <p class="ms-1 mb-1 fw-bold">Katherine Butler</p>
                                                             <small class="text-muted mb-0">162543</small>
@@ -382,7 +414,7 @@
                                                 </div>
                                                 <div class="wrapper d-flex align-items-center justify-content-between py-2 border-bottom">
                                                     <div class="d-flex">
-                                                        <img class="img-sm rounded-10" src="assets/images/faces/face4.jpg" alt="profile">
+                                                        <img class="img-sm rounded-10" src="{{ asset('/') }}admin/assets/images/faces/face4.jpg" alt="profile">
                                                         <div class="wrapper ms-3">
                                                             <p class="ms-1 mb-1 fw-bold">Matthew Bailey</p>
                                                             <small class="text-muted mb-0">162543</small>
@@ -392,7 +424,7 @@
                                                 </div>
                                                 <div class="wrapper d-flex align-items-center justify-content-between pt-2">
                                                     <div class="d-flex">
-                                                        <img class="img-sm rounded-10" src="assets/images/faces/face5.jpg" alt="profile">
+                                                        <img class="img-sm rounded-10" src="{{ asset('/') }}admin/assets/images/faces/face5.jpg" alt="profile">
                                                         <div class="wrapper ms-3">
                                                             <p class="ms-1 mb-1 fw-bold">Rafell John</p>
                                                             <small class="text-muted mb-0">Alaska, USA</small>

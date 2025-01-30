@@ -12,18 +12,18 @@ use App\Http\Controllers\Admin\SellerController;
 
 Route::group([], function (){
 
-    Route::middleware('guest:admin')->group( function () {
+    Route::middleware(['guest:admin'])->group( function () {
         Route::get('auth/login', [AdminAuthController::class, 'adminLogin'])->name('auth.login');
         Route::post('auth/login', [AdminAuthController::class, 'adminLoginSubmit'])->name('login.submit');
     });
 
 
 
-    Route::middleware(['auth:admin'])->group(function (){
+    Route::group(['middleware' => 'auth:admin'], function (){
         Route::get('/dashboard', [AdminAuthController::class, 'adminDashboard'])->name('dashboard');
         Route::post('/auth/logout', [AdminAuthController::class, 'logout'])->name('auth.logout');
 
-        //Admin Dashboard Discount Routes
+        //Admin Dashboard Booking Related Routes
         Route::prefix('booking')->name('booking.')->group(function (){
             Route::get('list/{status}', [BookingController::class, 'index'])->name('index');
         });
