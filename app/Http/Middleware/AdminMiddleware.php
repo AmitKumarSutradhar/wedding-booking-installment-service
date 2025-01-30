@@ -20,6 +20,8 @@ class AdminMiddleware
             return $next($request);
         }
 
+        auth()->gaurd('admin')->logout();
+
         return redirect()->route('admin.auth.login')->with('error', 'Unauthorized access');
     }
 }

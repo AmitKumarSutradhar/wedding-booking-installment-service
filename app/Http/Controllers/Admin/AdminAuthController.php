@@ -20,11 +20,9 @@ class AdminAuthController extends Controller
             'password' => ['required'],
         ]);
 
-//        if (Auth::guard('admin')->attempt([$credentials],$request->remember)) {
         if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
-            $request->session()->regenerate();
 
-            return redirect()->intended(route('admin.dashboard'));
+            return redirect()->route('admin.dashboard');
         }
 
         return back()->withErrors([
@@ -39,10 +37,6 @@ class AdminAuthController extends Controller
     public function logout(Request $request): RedirectResponse
     {
         Auth::guard('admin')->logout();
-
-        $request->session()->invalidate();
-
-        $request->session()->regenerateToken();
 
         return redirect('admin/auth/login');
     }
